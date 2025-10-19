@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>البكالوريا العلمي - موقع حلول</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .subject-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 15px; /* Spacing between the squares */
+            margin-top: 30px;
+        }
+        .subject-link-box {
+            display: block;
+            flex-basis: calc(50% - 7.5px); /* Makes two boxes fit per row */
+            text-decoration: none;
+            color: #333;
+            background-color: #f1f3f4;
+            padding: 15px 10px;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 1.1em;
+            font-weight: 600;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            transition: background-color 0.2s, transform 0.1s;
+        }
+        .subject-link-box:hover {
+            background-color: #e8f0fe;
+            color: #1a73e8;
+            transform: translateY(-1px);
+        }
+        /* Add icons or image placeholders if needed */
+        .subject-link-box span {
+            display: block;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <a href="index.html" class="back-link">العودة للصفحة الرئيسية</a>
+            <h1>ملفات مرحلة البكالوريا العلمي</h1>
+            <p>اختر المادة المطلوبة للوصول إلى الملفات والشروحات على جوجل درايف.</p>
+        </header>
+
+        <main class="links-section">
+            <div class="subject-grid">
+                <a href="YOUR_DRIVE_LINK_MATH" target="_blank" class="subject-link-box">
+                    ➕ الرياضيات
+                </a>
+                <a href="YOUR_DRIVE_LINK_PHYSICS" target="_blank" class="subject-link-box">
+                    🔬 الفيزياء
+                </a>
+
+                <a href="YOUR_DRIVE_LINK_CHEMISTRY" target="_blank" class="subject-link-box">
+                    🧪 الكيمياء
+                </a>
+                <a href="YOUR_DRIVE_LINK_BIOLOGY" target="_blank" class="subject-link-box">
+                    🌿 علم الأحياء
+                </a>
+
+                <a href="YOUR_DRIVE_LINK_ENGLISH" target="_blank" class="subject-link-box">
+                    🇬🇧 اللغة الإنكليزية
+                </a>
+                <a href="YOUR_DRIVE_LINK_FRENCH" target="_blank" class="subject-link-box">
+                    🇫🇷 اللغة الفرنسية
+                </a>
+
+                <a href="YOUR_DRIVE_LINK_ISLAMIC" target="_blank" class="subject-link-box">
+                    🕌 التربية الدينية الإسلامية
+                </a>
+                <a href="YOUR_DRIVE_LINK_CHRISTIAN" target="_blank" class="subject-link-box">
+                    ✝️ التربية الدينية المسيحية
+                </a>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
