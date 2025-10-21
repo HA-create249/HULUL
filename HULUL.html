@@ -5,25 +5,132 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>موقع حلول التعليمي</title>
     <link rel="stylesheet" href="style.css"> 
+    <style>
+    body {
+      font-family: Fredoka, sans-serif;
+      background-color: #f5f5f5;
+      margin:0;
+      padding:0;
+      font-size: 35px;
+     
+      
+    }
+    p{
+      margin-left:35px;
+      margin-right:35px;
+      margin-top: 15px;
+      padding:35px; 
+    }
+    
+     h1 {
+      position: absolute;
+      color: #f5f5f5;
+      top: 52%;
+      right: 58px;
+      font-family: Fredoka, sans-serif;
+      font-size:70px;
+      
+    }
+    
+    }
+    
+    h2 {
+      color: #1F534E;
+      font-weight: bold;
+      font-size: 60px;
+      text-align: center;
+    } 
+    
+    .navbar, ul {
+        list-style-type: none;
+        background-color: none;
+        width: 100%;
+        padding: 10px 67%;
+        margin: 0px;
+        overflow: hidden;
+        position: absolute;
+        font-size: 30px;
+        color: #f5f5f5;
+    }
+    .navbar, a {
+        color: #f5f5f5;
+        text-decoration: none;
+        padding: 15px;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        height: 100%;
+    }
+    .navbar, a:hover {
+        background-color: #AB161B;
+    }
+    .navbar, li {
+        float: right;
+        
+    }
+    
+    .search-container input{
+        margin: 25px;
+        padding: 15px 10%;
+        position:absolute;
+        width: 10%;
+        border: none;
+        box-shadow: 0px 2px 5px rgb(20,20,20);
+        border-radius: 25px;
+        font-size: 20px;
+    }
+    .logo {
+        position: absolute;
+        
+    }
+    
+  </style>
 </head>
 <body>
+    
+    <nav calss="navbar">
+        
+        <ul >
+            <li><a href="">الرئيسية</a></li>
+            <li><a href="">ملفات</a></li>
+            <li><a href="">اختبارات</a></li>
+            <li><a href="">تواصل</a></li>
+            
+        </ul>
+    </nav>
+ 
+    <div class="search-container">
+        <input type="text" placeholder="Search...">
+        <i class= "fa fa-serch"></i>
+    </div>
+ 
+ 
+ 
+ 
     <div class="header-image-container">
-        <img src="header-bg.jpg" alt="صورة غلاف الموقع" class="header-image">
+        <img src="https://i.imgur.com/Z29GTJu.jpeg" alt="صورة غلاف الموقع" class="header-image" width=100% height=auto>
+        
+        <h1>موقع حلول التعليمي</h1>
+        <P style="position: absolute;
+      color: #f5f5f5;
+      top: 66%;
+      right: 0px; font-size: 45px;">انهض... استمر... تعلم... و لا تدع شيء يقف في طريق حلمك</P>
     </div>
 
     <div class="container" style="margin-top: -50px;"> 
         <div class="logo-area">
-            <img src="logo.png" alt="شعار الموقع" class="logo">
+            
         </div>
 
         <main class="content-area">
-            <h1>موقع حلول التعليمي</h1>
             
-            <p>
+            
+            <p style="text-align: center;" >
                 موقع حلول هو منصة تعليمية سورية وُجدت لتكون سنداً للطلاب الذين حُرموا من حقهم في الدراسة بعد مجازر الساحل السوري في مارس 2025. يوفّر الموقع ملفات دراسية، شروحات مبسطة، ونماذج امتحانية تغطي مختلف المراحل والمواد وفق المنهاج التعليمي في سوريا. يهدف حلول إلى تمكين الطلاب من متابعة تعليمهم بشكل مستقل، وتجاوز صعوبات الانقطاع عن المدرسة، عبر موارد واضحة وسهلة الاستخدام تراعي احتياجاتهم وتدعم رحلتهم نحو بناء مستقبل أفضل.
             </p>
-            
-            <h2 class="stage-prompt">اختر مرحلتك الدراسية</h2>
+            <br>
+<br>
+            <h2 class="stage-prompt" style="text-align: center; color: #1F534E;">اختر مرحلتك الدراسية</h2>
             
             <div class="stage-links-grid">
                 
@@ -49,9 +156,10 @@
                 
             </div>
             <section class="advice-section">
-                <h2>طريقك نحو التفوق</h2>
+                <h2 style="color: #1F534E;">طريقك نحو التفوق</h2>
                 
-                <div class="advice-box">
+                <div class="advice-box" style="margin:20px;
+      padding:20px;">
                     في حلول نؤمن أن التفوق ليس صدفة، بل ثمرة جهد منظم وموارد مناسبة. لذلك صُمم الموقع ليكون دليلك العملي نحو النجاح، حيث تجد شروحات مبسطة تساعدك على فهم الدروس بعمق، وملفات منظمة تختصر لك الوقت، ونماذج امتحانية تقرّبك من أجواء الاختبار الحقيقي.
                     <br><br>
                     ولكي تصل إلى أفضل النتائج، إليك بعض النصائح الدراسية:
