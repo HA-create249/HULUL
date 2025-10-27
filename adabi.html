@@ -4,19 +4,381 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>البكالوريا الأدبي - موقع حلول</title>
-    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;700&display=swap" rel="stylesheet"> 
+    <style>
+        /* --- Global Reset & Best Practices --- */
+        * {
+            box-sizing: border-box; 
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Fredoka', Cursive, sans-serif; 
+            background-color: #f5f5f5;
+            font-size: 18px; 
+            line-height: 1.6; 
+        }
+
+        /* --- Typography --- */
+        h1 {
+            color: #f5f5f5;
+            font-family: 'Fredoka', Cursive, sans-serif;
+            font-size: 3.5rem; 
+            font-weight: bold;
+        }
+        
+        h2 {
+            color: #1F534E;
+            font-family: 'Fredoka', Cursive, sans-serif;
+            font-weight: bold;
+            font-size: 2.5rem; 
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        h3 {
+            color: #1F534E;
+            font-family: 'Fredoka', Cursive, sans-serif;
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 1.1rem;
+        }
+
+        /* --- Navbar --- */
+        .navbar {
+            position: absolute; 
+            top: 0;
+            left: 0;
+            width: 100%;
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center;
+            padding: 15px 5%; 
+            z-index: 10;
+        }
+
+        .navbar ul {
+            list-style-type: none;
+            display: flex; 
+        }
+
+        .navbar li {
+            margin-left: 15px; 
+        }
+
+        .navbar a {
+            color: #f5f5f5;
+            text-decoration: none;
+            padding: 10px;
+            font-size: 1.1rem;
+            display: block;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .navbar a:hover {
+            background-color: #AB161B;
+        }
+        
+        /* --- Search Bar --- */
+        .search-container input {
+            padding: 10px;
+            width: 200px; 
+            border: none;
+            box-shadow: 0px 2px 5px rgb(20, 20, 20);
+            border-radius: 25px;
+            font-size: 1rem;
+        }
+
+        /* --- Header / Hero Section --- */
+        .header-image-container {
+            position: relative; 
+            width: 100%;
+            height: 45vh; /* Shorter header for internal pages */
+            color: #f5f5f5;
+        }
+
+        .header-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; 
+            filter: brightness(0.6); 
+        }
+
+        /* Header text positioned and aligned to the left (flex-start in RTL) */
+        .header-text {
+            position: absolute;
+            top: 50%;
+            left: 5%; 
+            transform: translateY(-50%); 
+            width: 90%; 
+            
+            display: flex; 
+            flex-direction: column; 
+            align-items: flex-start; 
+            text-align: left; 
+        }
+        
+        .header-text h1 {
+            margin-bottom: 10px;
+            font-size: 3rem; /* Slightly smaller H1 for internal pages */
+        }
+
+        .header-text p {
+            font-size: 1.3rem;
+            max-width: 700px; 
+            margin-top: 0; 
+        }
+
+        /* --- Main Content Container --- */
+        .container {
+            max-width: 1200px; 
+            margin: -50px auto 0 auto; 
+            padding: 20px;
+            position: relative; 
+            z-index: 5;
+            background-color: #f5f5f5; 
+            border-radius: 10px 10px 0 0;
+            box-shadow: 0 -5px 15px rgba(0,0,0,0.1);
+        }
+
+        /* --- Back Link Styling --- */
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            padding: 10px 15px;
+            background-color: #AB161B;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: bold;
+            transition: background-color 0.3s, transform 0.1s;
+        }
+        
+        .back-link:hover {
+            background-color: #8C1115;
+            transform: translateY(-2px);
+        }
+        
+        /* --- Subject Grid Styling --- */
+        .subject-grid {
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Adaptive layout, at least 280px wide */
+            gap: 20px;
+            margin-top: 30px;
+            padding-bottom: 50px;
+        }
+
+        .subject-link-box {
+            display: flex; 
+            align-items: center;
+            justify-content: center;
+            height: 100px; 
+            text-decoration: none;
+            color: #1F534E; 
+            background-color: #ffffff; 
+            padding: 15px;
+            border-radius: 12px;
+            text-align: center;
+            font-size: 1.3rem;
+            font-weight: 700;
+            box-shadow: 0 4px 10px rgba(31, 83, 78, 0.1); 
+            border: 2px solid #E0E0E0;
+            transition: all 0.3s ease;
+        }
+
+        .subject-link-box:hover {
+            background-color: #FFF3F3; 
+            color: #AB161B; 
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(171, 22, 27, 0.2); 
+            border-color: #AB161B;
+        }
+        
+        /* --- Footer Styles --- */
+        .main-footer {
+            background-color: #1F534E;
+            color: white;
+            padding: 40px 5%;
+            margin-top: 40px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: right; 
+        }
+
+        .footer-section h3 {
+            color: white;
+            border-bottom: 2px solid #AB161B;
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section a {
+            color: #CFCFCF;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 8px;
+            transition: color 0.3s;
+        }
+
+        .footer-section a:hover {
+            color: #FFD700; 
+        }
+
+        .social-icons a {
+            display: inline-block;
+            margin-left: 10px;
+            font-size: 1.5rem;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            margin-top: 20px;
+            font-size: 0.9rem;
+            color: #CFCFCF;
+        }
+
+
+        /* ################################### */
+        /* ### RESPONSIVE STYLES (Mobile) ### */
+        /* ################################### */
+
+        @media (max-width: 768px) {
+            body {
+                font-size: 16px; 
+            }
+
+            /* --- Mobile Navbar --- */
+            .navbar {
+                flex-direction: column; 
+                padding: 10px;
+            }
+            
+            .navbar ul {
+                width: 100%;
+                justify-content: space-around; 
+                margin-top: 10px;
+                padding: 10px 0;
+                background-color: rgba(0,0,0,0.2); 
+            }
+            
+            .navbar li {
+                margin-left: 5px;
+            }
+
+            .navbar a {
+                font-size: 1rem;
+                padding: 5px;
+            }
+
+            .search-container input {
+                width: 180px;
+                font-size: 0.9rem;
+            }
+            
+            /* --- Mobile Header --- */
+            .header-image-container {
+                height: 35vh; 
+            }
+
+            .header-text {
+                width: 90%; 
+                align-items: center; /* Center the H1 and P for mobile */
+                text-align: center;
+                left: 50%; 
+                transform: translate(-50%, -50%);
+            }
+            
+            h1 {
+                font-size: 2rem; 
+            }
+
+            .header-text p {
+                font-size: 1rem; 
+            }
+
+            /* --- Mobile Subject Grid --- */
+            .subject-grid {
+                grid-template-columns: 1fr; /* Single column on mobile */
+            }
+
+            /* --- Mobile Footer --- */
+            .footer-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .footer-section h3 {
+                border-bottom: none;
+                padding-bottom: 0;
+                margin-bottom: 10px;
+            }
+            
+            .footer-section ul {
+                margin-bottom: 20px;
+            }
+            
+            .social-icons a {
+                margin: 0 5px;
+            }
+        }
+    </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <a href="index.html" class="back-link">العودة للصفحة الرئيسية</a>
+    
+    <!-- --- Shared Navigation Bar --- -->
+    <nav class="navbar"> 
+        <ul>
+            <li><a href="index.html">الرئيسية</a></li>
+            <li><a href="#">ملفات</a></li>
+            <li><a href="#">اختبارات</a></li>
+            <li><a href="#">تواصل</a></li>
+        </ul>
+        <div class="search-container">
+            <input type="text" placeholder="Search...">
+            </div>
+    </nav>
+
+    <!-- --- Header/Hero Section with Left-Aligned Title --- -->
+    <div class="header-image-container">
+        <!-- Using the same background image for consistency -->
+        <img src="https://i.imgur.com/Z29GTJu.jpeg" alt="صورة غلاف الموقع" class="header-image">
+        
+        <div class="header-text">
             <h1>ملفات مرحلة البكالوريا الأدبي</h1>
             <p>اختر المادة المطلوبة للوصول إلى الملفات والموارد التعليمية على جوجل درايف.</p>
-        </header>
+        </div>
+    </div>
 
+    <!-- --- Main Content Area --- -->
+    <div class="container"> 
         <main class="links-section">
+            
+            <!-- Back Link positioned within the main container -->
+            <a href="index.html" class="back-link">العودة للصفحة الرئيسية</a>
+            
+            <h2 style="text-align: right; font-size: 2rem; margin-bottom: 10px; color: #AB161B;">المواد الأدبية الأساسية</h2>
+
             <div class="subject-grid">
                 
+                <!-- Subject Links adapted for Literary Stream -->
                 <a href="YOUR_DRIVE_LINK_PHILOSOPHY" target="_blank" class="subject-link-box">
                     💡 الفلسفة
                 </a>
@@ -45,7 +407,57 @@
                     ✝️ التربية الدينية المسيحية
                 </a>
             </div>
+            
         </main>
     </div>
+    
+    <!-- --- Shared Footer --- -->
+    <footer class="main-footer">
+        <div class="footer-grid">
+            
+            <div class="footer-section">
+                <h3>روابط سريعة</h3>
+                <ul>
+                    <li><a href="index.html">الرئيسية</a></li>
+                    <li><a href="#">جميع الملفات</a></li>
+                    <li><a href="#">النماذج الامتحانية</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>المراحل الدراسية</h3>
+                <ul>
+                    <li><a href="#">بكالوريا علمي</a></li>
+                    <li><a href="#">بكالوريا أدبي</a></li>
+                    <li><a href="#">تاسع</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>تواصل معنا</h3>
+                <p>موقع حلول التعليمي</p>
+                <p>البريد: info@hulul.sy</p>
+                <div class="social-icons">
+                    <a href="#" style="font-size: 1.8rem; color: #3b5998;">F</a>
+                    <a href="#" style="font-size: 1.8rem; color: #55acee;">T</a>
+                    <a href="#" style="font-size: 1.8rem; color: #cd201f;">Y</a>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h3>شروط الموقع</h3>
+                <ul>
+                    <li><a href="#">سياسة الخصوصية</a></li>
+                    <li><a href="#">شروط الاستخدام</a></li>
+                    <li><a href="#">من نحن</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            © 2025 موقع حلول التعليمي. جميع الحقوق محفوظة.
+        </div>
+    </footer>
+
 </body>
 </html>
